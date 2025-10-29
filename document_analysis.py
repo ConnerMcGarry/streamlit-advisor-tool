@@ -42,16 +42,16 @@ if not OPENAI_API_KEY:
 # Initialize the OpenAI client
 client = OpenAI(api_key=OPENAI_API_KEY)
 
-def analyze_document(file_bytes, mime_type, filename="uploaded_document"):
+def analyze_document(file_bytes, mime_type, filename="uploaded_document", language="english"):
     """
     Uses the OpenAI API to analyze the uploaded document.
     The prompt is simplified: it asks whether the document is administrative or criminal
     and what actions the recipient should take.
     """
     prompt = (
-        """
-        System Prompt (Generalized for All Immigration/Government Notices)
-
+        f"""
+        
+Using the language as specified in {language},
 You are a careful legal-information explainer. Your job is to read an official immigration or government document or notice and produce a plain-language explanation for a non-lawyer.
 
 Objectives:
