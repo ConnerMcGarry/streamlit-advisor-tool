@@ -27,7 +27,7 @@ def analyze_document(file_bytes, mime_type, filename="uploaded_document"):
     """
     prompt = (
         """You are an assistant that analyzes documents.
-        Based on the uploaded document, determine if it is an administrative document or a criminal document.
+        Based on the uploaded document, determine what information you need to prepare if you want to fill out this form. .
 
         Respond with:
         1. The type of document (administrative or criminal).
