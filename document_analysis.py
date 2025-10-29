@@ -213,7 +213,7 @@ def main():
             st.write("PDF file uploaded.")
 
         st.write("Analyzing the document, please wait...")
-        analysis_result = analyze_document(file_bytes, mime_type, filename=filename)
+        analysis_result = analyze_document(file_bytes, mime_type, filename=filename, language=selected_language)
         st.success("Analysis Complete")
         st.write(analysis_result)
 
