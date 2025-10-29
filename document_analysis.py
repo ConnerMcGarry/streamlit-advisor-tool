@@ -196,7 +196,7 @@ def main():
     st.write("Upload an image (JPEG/PNG) or PDF of the document, or capture one using your camera.")
 
     input_method = st.radio("Choose input method:", ("Upload File", "Capture Image"))
-    selected_language = st.selectbox("Select target language", languages, index=default_index)
+    selected_language = st.selectbox("Select target language", languages)
 
     uploaded_file = None
     if input_method == "Upload File":
