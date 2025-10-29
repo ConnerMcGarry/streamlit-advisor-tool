@@ -8,7 +8,30 @@ import base64
 import requests
 
 load_dotenv()
-
+languages = [
+    "Spanish",
+    "English",
+    "Arabic",
+    "Bengali",
+    "Chinese (Cantonese)",
+    "Chinese (Mandarin)",
+    "French",
+    "German",
+    "Haitian Creole",
+    "Hindi",
+    "Italian",
+    "Polish",
+    "Japanese",
+    "Khmer",
+    "Korean",
+    "Persian",
+    "Portuguese",
+    "Russian",
+    "Somali",
+    "Tagalog",
+    "Urdu",
+    "Vietnamese",
+]
 # Load OpenAI API key from environment variable
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
@@ -173,6 +196,7 @@ def main():
     st.write("Upload an image (JPEG/PNG) or PDF of the document, or capture one using your camera.")
 
     input_method = st.radio("Choose input method:", ("Upload File", "Capture Image"))
+    selected_language = st.selectbox("Select target language", languages, index=default_index)
 
     uploaded_file = None
     if input_method == "Upload File":
